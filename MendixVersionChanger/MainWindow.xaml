@@ -1,0 +1,40 @@
+﻿<Window x:Class="MPKEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Mendix MPK version editor" Width="467" Height="348">
+    <Grid Margin="10,10,10,6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4.373"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Knop om een MPK-bestand te openen -->
+        <Button Grid.Row="3" Content="Open MPK" Click="BtnOpen_Click" Padding="5,2" Grid.Column="1" Width="200" Margin="42,10,41,10" />
+
+        <!-- Product versie -->
+        <Label Grid.Row="4" Grid.Column="0" Content="Product Version:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Name="TxtProductVersion" Width="200" Margin="42,10,41,10"/>
+
+        <!-- Build versie -->
+        <Label Grid.Row="5" Grid.Column="0" Content="Build Version:" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Name="TxtBuildVersion" Width="200" Margin="42,10,41,10"/>
+
+        <!-- Knop om wijzigingen op te slaan -->
+        <Button Grid.Row="8" Grid.Column="1" Content="Save Changes" Click="BtnSave_Click" Padding="5,2" Margin="0,20,0,20" HorizontalAlignment="Center" Width="200" Grid.RowSpan="2"/>
+        <ComboBox x:Name="ProductVersionCombobox" Grid.Column="1" HorizontalAlignment="Center" Margin="0,10,0,10" Grid.Row="7" VerticalAlignment="Top" Width="200" SelectionChanged="ComboBox_SelectionChanged"/>
+        <TextBox HorizontalAlignment="Left" Margin="14,0,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Use at your own, risk. Never upgrade to an never version, Mendix modeler handles that. It only changes the version number, it can not be garantueed that the imported won't harm your project. " VerticalAlignment="Center" Width="412" Height="52" Grid.ColumnSpan="2" BorderBrush="#FFABADB3" BorderThickness="0,0,0,0"/>
+        <Label Content="V 0.9" HorizontalAlignment="Left" Margin="23,0,0,0" Grid.Row="8" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
